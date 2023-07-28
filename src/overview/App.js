@@ -1,4 +1,5 @@
-import { Dropdown, Table, CollapsingBadgeBar } from "../components"
+import { Dropdown, Table } from "../components"
+import { CollapsingBadgeBar } from "../Badge"
 
 export function Overview({appData}) {
 	return (<>

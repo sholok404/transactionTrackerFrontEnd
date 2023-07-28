@@ -1,6 +1,6 @@
-import { createRoot } from "react-dom/client";
-import { Overview } from "./overview/App";
-import { TabNav } from "./components";
+import { createRoot } from "react-dom/client"
+import { Overview } from "./overview/App"
+import { TabNav } from "./Tab"
 
 const tags = [
 				{label: 'Led Zeppelin', onClickFunction: console.log},
