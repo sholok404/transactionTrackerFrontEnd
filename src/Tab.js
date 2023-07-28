@@ -41,5 +41,5 @@ function TabBar({tabData}) {
 }
 
 export function TabNav({tabData}) {
-	return <CollapsingBar name={<Bars3Icon className="-mr-1 h-6 w-6" aria-hidden="true" />} BarFunction={TabBar} DropFunction={FullMenu} breakpoint={640} tabData={tabData}/>;
+	return <CollapsingBar name={<Bars3Icon className="-mr-1 h-6 w-6" aria-hidden="true" />} BarFunction={TabBar} DropFunction={FullMenu} breakpoint={640} tabData={tabData} containerId="app" />;
 }

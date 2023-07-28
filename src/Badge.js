@@ -21,6 +21,7 @@ function BadgeBar({tabData}) {
 	);
 }
 
-export function CollapsingBadgeBar({tabData}) {
-	return <div className="flex justify-center"><CollapsingBar name="Tags" BarFunction={BadgeBar} DropFunction={Dropdown} breakpoint={640} tabData={tabData}/></div>;
+export function CollapsingBadgeBar({tabData, badgeBarId}) {
+	
+	return <div className="flex justify-center"><CollapsingBar name="Tags" BarFunction={BadgeBar} DropFunction={Dropdown} breakpoint={640} tabData={tabData} /></div>;
 }

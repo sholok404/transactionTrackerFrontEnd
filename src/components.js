@@ -74,3 +74,8 @@ export function CollapsingBar({name, BarFunction, DropFunction, breakpoint, tabD
 		<DropFunction name={name} options={tabData.map(x => x)} />
 		);
 }
+
+
+export function Button({label, onClickFunction}) {
+	return <button className="bg-gray-300 hover:bg-gray-400 font-bold py-1 px-2 rounded" onClick={onClickFunction}>{label}</button>;
+}
