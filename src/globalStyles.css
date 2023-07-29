@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.btn {
+		@apply inline-flex justify-center gap-x-1.5 m-1 
+		ring-1 ring-black ring-inset p-2 rounded-md
+		bg-gray-200 hover:bg-gray-300 hover:ring-2 hover:font-semibold;
+	}
+}

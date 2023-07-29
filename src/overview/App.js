@@ -11,7 +11,7 @@ export function Overview({appData}) {
 					<Dropdown name="Months" options={appData.months}/>
 					<Table tableArray={[['Due', 'Cleared'], [5000, 250]]}/>
 				</section>
-				<CollapsingBadgeBar tabData={appData.tags} />
+				<CollapsingBadgeBar tabData={appData.tags} breakpoint={640}/>
 			</header>
 			
 			<CardHolder customers={appData.customers} />

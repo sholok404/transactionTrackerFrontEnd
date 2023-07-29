@@ -1,9 +1,9 @@
 import { Table, Button } from "../components"
-import { CollapsingBadgeBar } from "../Badge"
+import { Dropdown } from "../components"
 
 export function CardHolder({customers}) {
 	return (
-		<div className="flex flex-wrap justify-center bg-gray-100">
+		<div className="flex flex-wrap justify-center bg-gray-50">
 			{customers.map(x =>
 				<CustomerCard data={x} />
 			)}
@@ -13,15 +13,18 @@ export function CardHolder({customers}) {
 
 function CustomerCard({data}) {
 	return (
-		<div className="border-2 border-solid border-black bg-gray-200 m-1 p-2 h-64
-		flex flex-col align-center grow-1 shrink-1 basis-48">
+		<div className="outline outline-1 m-1 p-2 h-80 bg-gray-100 rounded
+		flex flex-col align-center grow-1 shrink-1 basis-56 
+		hover:outline-2">
 			<hgroup className="text-center">
 				<h2 className="font-bold">{data.customer_name}</h2>
 				<h4>{data.mobile}</h4>
 			</hgroup>
-			<Button label="View Transactions" onClick={() => console.log(data.customer_name)} />
+			<button className="btn" onClick={() => console.log(data.customer_name)}>
+				View Transactions
+			</button>
 			<Table tableArray={data.financials} />
-			{/*<CollapsingBadgeBar tabData={data.tags}/>*/}
+			{<Dropdown name="Tags" options={data.tags} />}
 		</div>
 	);
 }

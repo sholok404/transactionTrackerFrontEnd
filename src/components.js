@@ -8,24 +8,21 @@ function classNames(...classes) {
 
 export function Dropdown({name, options}) {
 	return (
-		<Menu as="div" className="relative inline-block text-left m-4">
+		<Menu as="div" className="relative">
 			<div>
-				<Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold ring-1 ring-inset ring-black hover:bg-gray-300 bg-gray-100">
+				<Menu.Button className="btn">
 					{name}
 					<ChevronDownIcon className="-mr-1 h-5 w-5" aria-hidden="true" />
 				</Menu.Button>
 			</div>
-			<Menu.Items className="absolute left-0 z-10 mt-1 rounded-md ring-1 ring-black bg-white focus:outline-none">
+			<Menu.Items className="w-full absolute left-1 rounded-md ring-1 ring-black">
 				{options.map(option => 
 					<Menu.Item key={option.label}>
 						{({ active }) => (
 							<button
 								type="submit"
-								className={classNames(
-									active ? 'rounded-md bg-gray-300 ring-1 ring-black' : 'bg-gray-100',
-									'block w-full px-4 py-2 text-left text-sm'
-								)}
-							>
+								className={active ? 'p-1 bg-gray-300 w-full text-left font-semibold' : 'p-1 bg-gray-200 w-full text-left'}
+								>
 								{option.label}
 							</button>
 						)}
@@ -73,9 +70,4 @@ export function CollapsingBar({name, BarFunction, DropFunction, breakpoint, tabD
 		:
 		<DropFunction name={name} options={tabData.map(x => x)} />
 		);
-}
-
-
-export function Button({label, onClickFunction}) {
-	return <button className="bg-gray-300 hover:bg-gray-400 font-bold py-1 px-2 rounded" onClick={onClickFunction}>{label}</button>;
 }
