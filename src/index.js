@@ -25,10 +25,15 @@ function Customer(customer_name, phone, financials, tags) {
 	this.tags = tags;
 }
 
-const customers = [];
-for (i=0; i<4; i++) {
-	customers[i] = new Customer(cumberbatch(), i, [['Due', 'Cleared'], [20*i, 50*i]], tags);
+function customerMockData(i) {
+	if (i === 0) {
+		return new Customer(cumberbatch(), i, [['Due', 'Cleared'], [20*i, 50*i]], tags);
+	}
+	return [new Customer(cumberbatch(), i, [['Due', 'Cleared'], [20*i, 50*i]], tags)].concat(customerMockData(i-1));
 }
+
+const customers = customerMockData(4);
+console.log(customers);
 
 const appData = {currencyUnit: "BDT", months:[{label:'Jan'}, {label:'Feb'}], tags: tags, links: links, customers: customers};
 
